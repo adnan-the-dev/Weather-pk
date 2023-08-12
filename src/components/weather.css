@@ -1,0 +1,70 @@
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+body {
+    background: #f3f2ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vw;
+}
+
+.box {
+    height: 500px;
+    width: 500px;
+    /* border: 1px solid red; */
+    border-radius: 12px;
+    background: #1E90FF;
+}
+
+.inputFeild {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+}
+
+/* .cloud-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.cloud-icon img {
+    height: 100px;
+    width: 100px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 40px;
+}
+
+.location img {
+    height: 100px;
+    width: 100px;
+}
+
+.temprature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    gap: 30px;
+
+}
