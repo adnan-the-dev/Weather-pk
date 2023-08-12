@@ -22,6 +22,7 @@ function Weather() {
                         <img src="https://cdn.weatherapi.com/weather/64x64/day/116.png" alt="" />
                     </div>
                     <h2>39°C°F</h2>
+
                 </div>
 
             </div>
