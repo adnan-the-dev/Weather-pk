@@ -14,45 +14,67 @@ function Weather() {
             .then(res => res.json())
             .then(data => setReaponse(data))
     }
+    apiCall()
     return (
         <>
 
             <div className="box">
 
-                <form className="input" onSubmit={(e) => { e.preventDefault(); apiCall(); }}>
+                <form className="input">
                     <input type="search" className="inputFeild" placeholder="Search Country" onChange={(event) => { setSearch(event.target.value) }} />
-                    <button className="btn">Click me</button>
                 </form>
-                <div className="input"><h1>Country:{response.location?.country || "Search"}</h1></div>
 
-                <div className="location">
-                    <img src="https://img.icons8.com/?size=512&id=k1fSzY8XQUE8&format=png" alt="" />
-                    <h2>Name:{response.location?.name || ""}</h2>
-                </div>
-                <div className="temprature">
-
-                    <div className="cloud-icon">
-                        <img src={response.current?.condition.icon || img} alt="" />
+                {!search ? (
+                    <div style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        color: "white"
+                    }}>
+                        <h3 style={{
+                            fontSize: 'large',
+                            fontWeight: 'bolder'
+                        }}>No Data Found</h3>
+                        <span>Enter the country</span>
                     </div>
-                    <h2>{response.current?.temp_c || "0"}°C°F</h2>
-                </div>
+                ) : (
 
-                <div className="tiem">
-                    <h3>Time:{response.location?.localtime || ""}</h3>
-                </div>
 
-                <div className="region"><h3>Region:{response.location?.region || ""}</h3></div>
+                    <div>
+                        <div className="input"><h1>Country:{response.location?.country || "Search"}</h1></div>
 
-                <div className="degree-section">
-                    <div className="degree-part">
-                        <span>Cloud:{response.current?.cloud || "0"}</span>
-                        <span>Wind_Degree:{response.current?.wind_degree || "0"}</span>
+                        <div className="location">
+                            <img src="https://img.icons8.com/?size=512&id=k1fSzY8XQUE8&format=png" alt="" />
+                            <h2>City:{response.location?.name || ""}</h2>
+                        </div>
+                        <div className="temprature">
+
+                            <div className="cloud-icon">
+                                <img src={response.current?.condition.icon || img} alt="" />
+                            </div>
+                            <h2>{response.current?.temp_c || "0"}°C°F</h2>
+                        </div>
+
+                        <div className="tiem">
+                            <h3>Time:{response.location?.localtime || ""}</h3>
+                        </div>
+
+                        <div className="region"><h3>Region:{response.location?.region || ""}</h3></div>
+
+                        <div className="degree-section">
+                            <div className="degree-part">
+                                <span>Cloud:{response.current?.cloud || "0"}</span>
+                                <span>Wind_Degree:{response.current?.wind_degree || "0"}</span>
+                            </div>
+                            <div className="degree-part">
+                                <span>Longitude:{response.location?.lat || "0"}</span>
+                                <span>Latitude:{response.location?.lon || "0"}</span>
+                            </div>
+                        </div>
                     </div>
-                    <div className="degree-part">
-                        <span>Longitude:{response.location?.lat || "0"}</span>
-                        <span>Latitude:{response.location?.lon || "0"}</span>
-                    </div>
-                </div>
+                )}
+
             </div>
         </>
     );
