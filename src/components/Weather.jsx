@@ -15,6 +15,7 @@ function Weather() {
             .then(data => setReaponse(data))
     }
     apiCall()
+
     return (
         <>
 
