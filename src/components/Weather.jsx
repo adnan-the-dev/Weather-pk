@@ -10,7 +10,7 @@ function Weather() {
   const [search, setSearch] = useState("");
   const [response, setReaponse] = useState({});
 
-  const apiCall = (e) => {
+  const apiCall = () => {
     fetch(url + search.replace(" ", "+"))
       .then((res) => res.json())
       .then((data) => setReaponse(data));
